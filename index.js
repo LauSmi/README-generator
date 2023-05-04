@@ -2,7 +2,6 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 
-
 //User input questions
 inquirer
   .prompt([
@@ -19,7 +18,8 @@ inquirer
     },
     {
       type: 'input',
-      message: 'What are the steps required to install your project, if necessary?',
+      message:
+        'What are the steps required to install your project, if necessary?',
       name: 'installation',
     },
     {
@@ -35,10 +35,18 @@ inquirer
       name: 'credits',
     },
     {
-      type: "checkbox",
-      name: "license",
-      message: "Please select a license applicable to this project.",
-      choices: ["MIT", "APACHE2.0", "Boost1.0", "MPL2.0", "BSD2", "BSD3", "none"],
+      type: 'checkbox',
+      name: 'license',
+      message: 'Please select a license applicable to this project.',
+      choices: [
+        'MIT',
+        'APACHE2.0',
+        'Boost1.0',
+        'MPL2.0',
+        'BSD2',
+        'BSD3',
+        'none',
+      ],
     },
     {
       type: 'input',
@@ -65,21 +73,18 @@ inquirer
     },
     {
       type: 'input',
-      message:
-        'Enter your email',
+      message: 'Enter your email',
       name: 'email',
     },
     {
       type: 'input',
-      message:
-        'Enter your GitHub',
+      message: 'Enter your GitHub',
       name: 'github',
     },
-    
   ])
   .then((response) => {
     const readMeContent = generateReadMe(response);
-    fs.writeFile('new-ReadMe.md', readMeContent, (err) => {
+    fs.writeFile('README.md', readMeContent, (err) => {
       if (err) {
         console.error(err);
       } else {
@@ -88,18 +93,15 @@ inquirer
     });
   });
 
-
-  //Function that returns a license badge based on which license is passed in.
+//Function that returns a license badge based on which license is passed in.
 function renderLicenseBadge(license) {
-  if (license !== "none") {
+  if (license !== 'none') {
     return `![Github license](https://img.shields.io/badge/license-${license}-blue.svg)`;
-    
   }
-  return "";
+  return '';
 }
 
-
-  //Function to generate markdown for README
+//Function to generate markdown for README
 function generateReadMe(response) {
   const readMeTemplate = `
 
@@ -144,7 +146,11 @@ ${response.contribute}
 ${response.tests}
 
 ## Questions
-Please send your questions [here](mailto:${response.email}?subject=[GitHub]%20Dev%20Connect) or visit [github/${response.github}](https://github.com/${response.github}).
+Please send your questions [here](mailto:${
+    response.email
+  }?subject=[GitHub]%20Dev%20Connect) or visit [github/${
+    response.github
+  }](https://github.com/${response.github}).
 
 
 `;

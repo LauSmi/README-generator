@@ -1,8 +1,8 @@
 
 
-![Github license](https://img.shields.io/badge/license-MIT-blue.svg)
+![Github license](https://img.shields.io/badge/license-MPL2.0-blue.svg)
 
-# ReadMeGenerator
+# dsds
 
 ## Table of Contents
 * [Description](#description)
@@ -14,31 +14,31 @@
 * [Questions](#questions)
 
 ## Description
-fdgfd
+dsfds
 
 ## Installation
-fdgfds
+dsfds
 
 ## Usage
-fdfgd
+dfsfds
 
 ## Credits
-fdsfd
+dsfds
 
 ## License
-Licensed under the MIT license.
+Licensed under the MPL2.0 license.
 
 ## Badges
-dsjifjds
+fdsfds
 
 ## Features
-dssd
+dsfds
 
 ## How to Contribute
-dfds
+dsffds
 
 ## Tests
-dsdfds
+dsfds
 
 ## Questions
 Please send your questions [here](mailto:dsfds?subject=[GitHub]%20Dev%20Connect) or visit [github/sfds](https://github.com/sfds).
