@@ -2,7 +2,7 @@
 
 ![Github license](https://img.shields.io/badge/license-MIT-blue.svg)
 
-# sjkfj
+# README Generator
 
 ## Table of Contents
 * [Description](#description)
@@ -14,33 +14,33 @@
 * [Questions](#questions)
 
 ## Description
-fdfd
+This generator was made to assist in the creation of professional ReadMes. GitHub repository: https://github.com/LauSmi/README-generator
 
 ## Installation
-dsdf
+N/A
 
 ## Usage
-fdsfd
+JavaScript, Markdown, Node, JSON.
 
 ## Credits
-dsd
+For references and tutorials: https://w3schools.com https://developer.mozilla.org/en-US
 
 ## License
 Licensed under the MIT license.
 
 ## Badges
-sfds
+N/A
 
 ## Features
-fdsf
+N/A
 
 ## How to Contribute
-fds
+N/A
 
 ## Tests
-dsfds
+N/A
 
 ## Questions
-Please send your questions to: 123@gmail.com or visit [github/lausmi](https://github.com/lausmi).
+Please send your questions to: 123ABC@gmail.com or visit [github/lausmi](https://github.com/lausmi).
 
 
