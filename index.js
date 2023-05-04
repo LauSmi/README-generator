@@ -1,6 +1,9 @@
+//Packages needed
 const fs = require('fs');
 const inquirer = require('inquirer');
 
+
+//User input questions
 inquirer
   .prompt([
     {
@@ -11,7 +14,7 @@ inquirer
     {
       type: 'input',
       message:
-        'Provide a short description explaining the what, why, and how of your project. Include links to GitHub, website, etc.',
+        'Provide a description explaining the what, why, and how of your project.',
       name: 'description',
     },
     {
@@ -32,9 +35,10 @@ inquirer
       name: 'credits',
     },
     {
-      type: 'input',
-      message: 'Add your license',
-      name: 'license',
+      type: "checkbox",
+      name: "license",
+      message: "Please select a license applicable to this project.",
+      choices: ["MIT", "APACHE2.0", "Boost1.0", "MPL2.0", "BSD2", "BSD3", "none"],
     },
     {
       type: 'input',
@@ -59,6 +63,19 @@ inquirer
         'Optional: Tests. Go the extra mile and write tests for your application. Then provide examples on how to run them here.',
       name: 'tests',
     },
+    {
+      type: 'input',
+      message:
+        'Enter your email',
+      name: 'email',
+    },
+    {
+      type: 'input',
+      message:
+        'Enter your GitHub',
+      name: 'github',
+    },
+    
   ])
   .then((response) => {
     const readMeContent = generateReadMe(response);
@@ -71,12 +88,33 @@ inquirer
     });
   });
 
+
+  //Function that returns a license badge based on which license is passed in.
+function renderLicenseBadge(license) {
+  if (license !== "none") {
+    return `![Github license](https://img.shields.io/badge/license-${license}-blue.svg)`;
+    
+  }
+  return "";
+}
+
+
+  //Function to generate markdown for README
 function generateReadMe(response) {
   const readMeTemplate = `
-  🏆 🏆 🏆
 
-# Project Title
-${response.projectTitle}
+${renderLicenseBadge(response.license)}
+
+# ${response.projectTitle}
+
+## Table of Contents
+* [Description](#description)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Credits](#credits)
+* [License](#license)
+* [Testing](#testing)
+* [Questions](#questions)
 
 ## Description
 ${response.description}
@@ -91,9 +129,7 @@ ${response.usage}
 ${response.credits}
 
 ## License
-Licensed under ${response.license} license.
-
----
+Licensed under the ${response.license} license.
 
 ## Badges
 ${response.badges}
@@ -106,6 +142,9 @@ ${response.contribute}
 
 ## Tests
 ${response.tests}
+
+## Questions
+Please send your questions [here](mailto:${response.email}?subject=[GitHub]%20Dev%20Connect) or visit [github/${response.github}](https://github.com/${response.github}).
 
 
 `;
