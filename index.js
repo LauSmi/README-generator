@@ -13,7 +13,7 @@ inquirer
     {
       type: 'input',
       message:
-        'Provide a description explaining the what, why, and how of your project.',
+        'Provide a description explaining the what, why, and how of your project. Include screenshots as needed. Provide links to GitHub repositories and website, as needed.',
       name: 'description',
     },
     {
@@ -25,7 +25,7 @@ inquirer
     {
       type: 'input',
       message:
-        'Provide instructions and examples for use. List any languages and technologies used. Include screenshots as needed.',
+        'Provide instructions and examples for use. List any languages and technologies used.',
       name: 'usage',
     },
     {
@@ -78,7 +78,7 @@ inquirer
     },
     {
       type: 'input',
-      message: 'Enter your GitHub',
+      message: 'Enter your GitHub name',
       name: 'github',
     },
   ])
@@ -146,9 +146,7 @@ ${response.contribute}
 ${response.tests}
 
 ## Questions
-Please send your questions [here](mailto:${
-    response.email
-  }?subject=[GitHub]%20Dev%20Connect) or visit [github/${
+Please send your questions to: ${response.email} or visit [github/${
     response.github
   }](https://github.com/${response.github}).
 
